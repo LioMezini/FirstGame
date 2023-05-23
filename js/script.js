@@ -1,14 +1,20 @@
-const mario = document.querySelector('.mario');
+const mario = document.querySelector(".mario");
 
 const jump = () => {
-    mario.classList.add('jump');
+    mario.classList.add("jump");
 
     setTimeout(() => {
+        mario.classList.remove("jump");
+    }, 500);
+};
 
-        mario.classList.remove('jump');
+const Loop = setInterval(() => {
+    const pipePosition = pipe.offsetLeft;
 
-    }, 500)
- } 
+    if (pipePosition <= 120) {
+        pipe.style.animation = none;
+        pipe.style.left = `${pipePosition}px`;
+    }
+}, 10);
 
-document.addEventListener('keydown', jump);
-
+document.addEventListener("keydown", jump);
